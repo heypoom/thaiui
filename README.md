@@ -1,81 +1,42 @@
-# Turborepo starter
+# ThaiUI
 
-This is an official starter Turborepo.
+ThaiUI aims to be an open-source, framework-agnostic design system for Thai civic tech and government websites and web applications.
 
-## Using this example
+## Goals and principles
 
-Run the following command:
+- ThaiUI should be usable without build tooling or build scripts. Should be directly usable with CDN, e.g. `<link rel="stylesheet" href="https://thaiui.org/thaiui.css" />`.
+- ThaiUI should work with any CSS frameworks, e.g. with utility-class based CSS frameworks out of the box. (e.g. Tailwind, UnoCSS)
+- ThaiUI should expose a set of classes that is overrideable via CSS variables or utility classes, akin to DaisyUI. It should also expose CSS variables defining the design system's colors, spacings, etc.
+- ThaiUI should be compatible with [Tailwind](https://tailwindcss.org), [UnoCSS](https://unocss.dev) and other frameworks. It should provide the base configuration for users of utility-class based frameworks (e.g. `tailwind.config.js` or `uno.config.ts`) to make use of ThaiUI's CSS variables for consistent styling out of the box.
+- ThaiUI should be JS framework agnostic, i.e. it must be usable with vanila JavaScript, React, Vue, Svelte, etc. ThaiUI should expose a set of bindings for each popular frameworks, yet usable with Vanilla HTML.
+- ThaiUI should expose a set of components and templates, both in base HTML form and framework-binding form.
 
-```sh
-npx create-turbo@latest
+## Structure
+
+```txt
+packages/
+  css/        # css stylesheets
+  react/      # react bindings
+  components/ # framework-agnostic components
 ```
 
-## What's inside?
+## Ideas for experimentation
 
-This Turborepo includes the following packages/apps:
+- Build framework-agnostic JavaScript code as [Web Components using Preact](https://preactjs.com/guide/v10/web-components). Preact has a 3KB runtime, and Web Components are natively supported by all browsers.
 
-### Apps and Packages
+- Should we base ThaiUI on an existing CSS framework that is well maintained and easily overrideable?
+  - For reference, Singapore forks Bootstrap 4 and build on top of it; Current version is [Bootstrap 5](https://getbootstrap.com).
+  - Although, some developers are reluctant to use Singapore's design system due to it's dependencies on Bootstrap -- difficult to override unless you compile the Sass sources yourself.
+  - [Bootstrap 5](https://getbootstrap.com) solves this by making use of CSS variables and utility classes.
+- Use [Sindre Sorhus' Modern Normalizer](https://github.com/sindresorhus/modern-normalize) for CSS normalization.
+  - [modern-normalize.css](https://github.com/sindresorhus/modern-normalize/blob/main/modern-normalize.css)
+- Can we compose a design system based on `@apply` utility classes, so the users of our framework does not need to use Tailwind?
+  - Idea: using TailwindCSS to compile to classes, with CSS variables as base. Same as how DaisyUI works. DaisyUI uses a combination of `@apply`-ing tailwind utility classes with CSS variables. See how the [DailyUI build](https://cdnjs.cloudflare.com/ajax/libs/daisyui/3.5.1/styled.css) compiles to vanilla CSS, so the design system consumer does not need to use Tailwind.
+  - Alternative: using UnoCSS's `@unocss/transformer-directives` to compile `@apply` to regular classes.
+  - DaisyUI code
+    - [styled/button.css](https://github.com/saadeghi/daisyui/blob/master/src/components/styled/button.css)
+    - [styled/card.css](https://github.com/saadeghi/daisyui/blob/master/src/components/styled/card.css)
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+## References
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+- [New Zealand Design System](https://design-system-alpha.digital.govt.nz/components/FlexGrid)
