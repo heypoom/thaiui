@@ -25,7 +25,8 @@ packages/
 
 ## Ideas for experimentation
 
-- Build framework-agnostic JavaScript code as [Web Components using Preact](https://preactjs.com/guide/v10/web-components). Preact has a 3KB runtime, and Web Components are natively supported by all browsers.
+- Can we build framework-agnostic JavaScript code as web components?
+  - Idea: [Preact](https://preactjs.com/guide/v10/web-components) supports creating web components, and it has a 3KB runtime. However, the `preact-custom-element` library has not been updated for 3 years now.
 
 - Should we base ThaiUI on an existing CSS framework that is well maintained and easily overrideable?
   - For reference, Singapore forks Bootstrap 4 and build on top of it; Current version is [Bootstrap 5](https://getbootstrap.com).
