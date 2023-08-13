@@ -4,3 +4,5 @@
 .btn {
   @apply px-8 bg-primary;
 }
+
+@tailwind base;
