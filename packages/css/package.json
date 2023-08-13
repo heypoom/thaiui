@@ -1,6 +1,6 @@
 {
-  "name": "thaiui-css",
-  "description": "ThaiUI css stylings",
+  "name": "@thaiui/css",
+  "description": "CSS stylings for ThaiUI",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -8,8 +8,6 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "eslint-config-custom": "workspace:*",
-    "tsconfig": "workspace:*",
     "typescript": "^4.5.2"
   }
 }
