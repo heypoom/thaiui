@@ -1,1 +1,4 @@
 /** ThaiUI entry point **/
+.btn {
+	@apply px-8;
+}
