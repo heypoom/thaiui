@@ -1,4 +1,6 @@
+@import './variables.css';
+
 /** ThaiUI entry point **/
 .btn {
-	@apply px-8;
+  @apply px-8 bg-primary;
 }

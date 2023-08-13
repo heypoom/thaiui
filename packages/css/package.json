@@ -5,8 +5,9 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint \"**/*.ts*\"",
-    "build": "postcss -o dist/thaiui.css src/*.css",
-    "build:minified": "postcss --config config/min -o dist/thaiui.min.css src/*.css"
+    "dev": "postcss -w -o dist/thaiui.css src/thaiui.css",
+    "build": "postcss -o dist/thaiui.css src/thaiui.css",
+    "build:minified": "postcss --config config/min -o dist/thaiui.min.css src/thaiui.css"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
