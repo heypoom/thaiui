@@ -15,6 +15,8 @@ ThaiUI aims to be an open-source, framework-agnostic design system for Thai civi
 ## Structure
 
 ```txt
+apps/
+  docs/       # documentation site, built with Astro and ThaiUI
 packages/
   css/        # css stylesheets
   react/      # react bindings
