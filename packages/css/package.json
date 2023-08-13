@@ -7,7 +7,10 @@
     "lint": "eslint \"**/*.ts*\""
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.14",
     "eslint": "^7.32.0",
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.3.3",
     "typescript": "^4.5.2"
   }
 }
