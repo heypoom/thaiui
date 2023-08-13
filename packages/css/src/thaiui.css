@@ -1,9 +1,9 @@
 /** ThaiUI variables **/
 @import './variables.css';
 
+/* @tailwind base; */
+
 /** ThaiUI components **/
 .btn {
-  @apply px-8 bg-primary;
+  @apply px-24 py-24 bg-primary;
 }
-
-@tailwind base;
