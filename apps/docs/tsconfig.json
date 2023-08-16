@@ -1,8 +1,0 @@
-{
-  "extends": "astro/tsconfigs/strictest",
-  "compilerOptions": {
-    "paths": {
-      "@thaiui/css/*": ["../../packages/css/dist/*"]
-    }
-  }
-}
